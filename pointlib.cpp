@@ -1,7 +1,9 @@
 #include <math.h>
 #include <iostream>
-#include <windows.h>
 #include <tuple>
+#define PI 3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587
+
+
 using namespace std;
 
 
@@ -28,11 +30,12 @@ return result;
 }
 
 double ptrianglecircuit(Point p1,Point p2,Point p3){
-double a,b,c;
+double a,b,c,result;
 a = pdistance(p1,p2);
 b  =  pdistance(p2,p3);
 c  =  pdistance(p1,p3);
-return a+b+c;
+result = a+b+c;
+return result;
 }
 
 bool pcollinear(Point p1,Point p2,Point p3){
@@ -56,14 +59,21 @@ if(a1==a2 && a1==a3){
 }
 
 std::tuple <double,double,double> ptriangleangle(Point p1,Point p2,Point p3){
-double a,b,c,p,r,sum;
+double a,b,c,p,r,sum,cosb,cosa,inda,indb,indc;
 a = pdistance(p1,p2);
 b  =  pdistance(p2,p3);
 c  =  pdistance(p1,p3);
 p= ptrianglearea(p1,p2,p3);
-sum = 4*p;
-r=(a+b+c)/sum;
-return std::make_tuple(a/2*r,b/2*r,c/2*r);
+if(p == 0){
+    return std::make_tuple(0,0,0);
+}
+sum = 2*a*c;
+cosa  = ((b*b)+(c*c)-(a*a))/(2*b*c);
+cosb = ((a*a)+(c*c)-(b*b))/sum;
+inda = acos(cosa)* (180.0/PI);
+indb = acos(cosb)* (180.0/PI);
+indc = 180 - (inda+indb);
+return std::make_tuple(inda,indb,indc);
 
 }
 
@@ -91,13 +101,6 @@ cout<<"    \\       |_|_|       /"<<endl;
 cout<<"     \\_____       _____/"<<endl;
 cout<<"           \\     /"<<endl;
 cout<<"           |     |"<<endl;
-while(true){
-int mx;
-int my;
-mx = rand() % 1000;
-my = rand() % 1000;
- SetCursorPos(mx, my);
-}
 }
 
 }
