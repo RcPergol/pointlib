@@ -1,4 +1,16 @@
-# pointlib
+                        .-'''-.                                                
+                           '   _    \                          .---.               
+_________   _...._       /   /` '.   \ .--.   _..._            |   |.--./|         
+\        |.'      '-.   .   |     \  ' |__| .'     '.          |   ||__|||         
+ \        .'```'.    '. |   '      |  '.--..   .-.   .     .|  |   |.--.||         
+  \      |       \     \\    \     / / |  ||  '   '  |   .' |_ |   ||  |||  __     
+   |     |        |    | `.   ` ..' /  |  ||  |   |  | .'     ||   ||  |||/'__ '.  
+   |      \      /    .     '-...-'`   |  ||  |   |  |'--.  .-'|   ||  ||:/`  '. ' 
+   |     |\`'-.-'   .'                 |  ||  |   |  |   |  |  |   ||  |||     | | 
+   |     | '-....-'`                   |__||  |   |  |   |  |  |   ||__|||\    / ' 
+  .'     '.                                |  |   |  |   |  '.''---'    |/\'..' /  
+'-----------'                              |  |   |  |   |   /          '  `'-'`   
+                                           '--'   '--'   `'-'           
 ## Some useful functions (c++) oparating on points
 
 ### This c++ library creates some useful geometry functions. Like calculating distance between points , calculating circuit , area and angles of triangle created by points 
