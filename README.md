@@ -2,7 +2,7 @@
                                               
 ## Some useful functions (c++) oparating on points
 
-### This c++ library creates some useful geometry functions. Like calculating distance between points , calculating circuit , area and angles of triangle created by points 
+### This c++ library creates some useful geometry functions. Like calculating distance between points ,calculating circuit , area and angles of triangle created by points 
 
 * To decleare Point:
   Point p1;
