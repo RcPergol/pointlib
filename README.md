@@ -9,7 +9,7 @@
 * To change arguments;
   p1.x = a;
   p1.y = b;
-* You can also created array of Points:
+* You can also create array of Points:
   Point p[n];
 
 __For more examples of use open main.cpp file__
