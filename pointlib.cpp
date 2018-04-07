@@ -12,6 +12,8 @@ struct Point{
     double y;
 };
 
+
+
 double pdistance(Point p1,Point p2){
     double d,tmp;
     tmp = (p2.x-p1.x)*(p2.x-p1.x) +(p2.y-p1.y)*(p2.y-p1.y);
@@ -30,12 +32,14 @@ return result;
 }
 
 double ptrianglecircuit(Point p1,Point p2,Point p3){
+
 double a,b,c,result;
 a = pdistance(p1,p2);
 b  =  pdistance(p2,p3);
 c  =  pdistance(p1,p3);
 result = a+b+c;
 return result;
+
 }
 
 bool pcollinear(Point p1,Point p2,Point p3){
@@ -58,24 +62,41 @@ if(a1==a2 && a1==a3){
 
 }
 
-std::tuple <double,double,double> ptriangleangle(Point p1,Point p2,Point p3){
-double a,b,c,p,r,sum,cosb,cosa,inda,indb,indc;
+tuple <double,double,double> ptriangleangle(Point p1,Point p2,Point p3){
+double a,b,c,p,sum,cosb,cosa,inda,indb,indc,arctodeg;
+arctodeg =  (180.0/PI);
+//now i check posibility of creating triangle
+p= ptrianglearea(p1,p2,p3);
+if(p == 0){
+    return make_tuple(0,0,0);
+}
 a = pdistance(p1,p2);
 b  =  pdistance(p2,p3);
 c  =  pdistance(p1,p3);
-p= ptrianglearea(p1,p2,p3);
-if(p == 0){
-    return std::make_tuple(0,0,0);
-}
+
 sum = 2*a*c;
 cosa  = ((b*b)+(c*c)-(a*a))/(2*b*c);
 cosb = ((a*a)+(c*c)-(b*b))/sum;
-inda = acos(cosa)* (180.0/PI);
-indb = acos(cosb)* (180.0/PI);
+inda = acos(cosa)*arctodeg;
+indb = acos(cosb)*arctodeg;
 indc = 180 - (inda+indb);
-return std::make_tuple(inda,indb,indc);
+return make_tuple(inda,indb,indc);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void peasteregg(bool pbunny){
 
