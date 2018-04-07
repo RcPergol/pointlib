@@ -14,6 +14,8 @@
 
 __For more examples of use open main.cpp file__
 
+### Description:
+
 * __pdistance(Point ,Point)__
   * Returns double - distance beetwen two points.
 * __ptrianglearea(Point,Point,Point)__
